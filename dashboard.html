@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/css/dashboard.css">
+</head>
+<body>
+
+<div class="dash">
+
+    <header class="header">
+      <div class="header__search">
+      </div>
+      <div class="header__options">
+        <a href="#" class="header__link">Cerrar sesión</a>
+      </div>
+    </header>
+
+    <div id="modal" class="modal">
+      <div class="modal-body">
+          <div class="">
+              <form target-dismiss="modal" message="Usuario registrado correctamente" ajax action="/signup" method="post" class="form display-flex display-flex-column full-content signup-form">
+                  <label>Imagen</label>
+                  <input name="img" class="input" type="file" >  
+                  <label>Nombre</label>
+                  <input name="name" class="input" type="text" placeholder="Nombre del producto">
+                  <label>Precio</label>
+                  <input name="price" class="input" type="number" placeholder="Precio del producto">
+                  <label>Descripcion</label>
+                  <input name="description" class="input" type="text" placeholder="Descripcion">
+                  <label>Dimensiones (LARGO*ANCHO*ALTO)</label>
+                  <input name="dimentions" class="input" type="text" placeholder="Dimensiones del producto">
+                  <label>Peso</label>
+                  <input step="any" name="weight" class="input" type="number" placeholder="Peso del producto">
+                  <label>Categoria</label>
+                  <select class="input" name="category">
+                    <option> ola</option>
+                  </select>
+                  <label>Marca</label>
+                  <select class="input" name="brand">
+                    <option></option>
+                  </select>
+                  <label>Estado</label>
+                  <select class="input" name="state">
+                    <option></option>
+                  </select>
+                  <button class="btn-primary" type="submit">Aceptar</button>
+              </form>
+          </div>
+      </div>
+    </div>
+  
+    <div class="body">
+  
+      <div class="sidebar">
+  
+        <div class="sidebar__icon">
+          <h1>Productos</h1>
+        </div>
+  
+        <div class="sidebar__icon">
+          <h1>Marcas</h1>
+        </div>
+  
+        <div class="sidebar__icon">
+          <h1>Promociones</h1>
+        </div>
+  
+        <div class="sidebar__icon">
+          <h1>Administradores</h1>
+        </div>
+  
+        <div class="sidebar__icon">
+        </div>
+  
+      </div>
+  
+      <main class="main">
+        <div class="card">
+            <div class="card-header">
+                <h1>Productos</h1>
+                <button data-target="modal" class="btn-primary">Agregar nuevo</button>
+            </div>
+            <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Descripcion</th>
+                <th>Dimensiones</th>
+                <th>Peso</th>
+                <th>Categoria</th>
+                <th>Estado</th>
+                <th>Marca</th>
+                <th>Acciones</th>
+            </tr>
+            <tr>
+                <td>Alimento</td>
+                <td>$100</td>
+                <td>Ninguna</td>
+                <td>10x10x10 cm3</td>
+                <td>10 KG</td>
+                <td>Perros</td>
+                <td>Disponible</td>
+                <td>marca</td>
+                <td>
+                    <button class="btn-primary">Eliminar</button>
+                    <button class="btn-primary">Editar</button>
+                </td>
+            </tr>
+            </table>
+        </div>
+  
+      </main>
+  
+    </div>
+  
+  </div>
+  <script src="/src/js/admin.js"></script>
+</body>
+</html>

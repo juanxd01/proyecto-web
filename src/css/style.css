@@ -1,0 +1,591 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400&display=swap');
+
+:root{
+    --bg-primary-color: #286ace;
+    --bg-image-linear-gradient: linear-gradient(to right, #286ace, #1e6add);
+    --footer-height: 6em;
+}
+
+.text-primary{
+    color: #4481dd;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+header{
+    /* background-image: var(--bg-image-linear-gradient); */
+    padding: 1em;
+}
+
+.material-symbols-outlined{
+    color: var(--bg-primary-color);
+}
+
+.dropitem {
+    background-color: transparent;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropitem:hover{
+    background-color: #1259c4;
+}
+  
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+.dropdown-content a:hover {background-color: #ddd;}
+  
+.dropdown:hover .dropdown-content {display: block;}
+  
+.dropdown:hover .dropbtn {background-color: #1e6add;}
+
+.main-nav-menu-content{
+    list-style: none;
+    width: 100%;
+    display: flex;
+}
+
+.main-nav-menu{
+    background-image: var(--bg-image-linear-gradient);
+}
+
+.display-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.display-flex-row{
+    flex-direction: row;
+}
+
+.display-flex-column{
+    flex-direction: column;
+    row-gap: 1em;
+}
+
+.flex-justify-space-between{
+    justify-content: space-between;
+}
+
+.flex-justify-space-around{
+    justify-content: space-around;
+}
+
+.flex-justify-space-center{
+    justify-content: center;
+    column-gap: 4em;
+}
+
+.flex-align-items-center{
+    align-items: center;
+}
+
+.circle-img{
+    cursor: pointer;
+    width: 13em;
+    height: 13em;
+    background-color: #1e6add7a;
+    border-radius: 1000px;
+    overflow: auto;
+    padding: 2px;
+    transition: all 100ms;
+}
+
+.circle-img:hover{
+    box-shadow: 0px 0px 1px 2px #1964d49d;
+}
+
+.img{
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.mt-2{
+    margin-top: 2em;
+}
+
+.mt-1{
+    margin-top: 1em;
+}
+
+.ml-1{
+    margin-left: 1em;
+}
+
+.ml-5{
+    margin-left: 5em;
+}
+
+.input{
+    font-size:medium;
+    letter-spacing: 1.1px;
+    border: 2px solid rgba(204, 197, 197, 0.637);
+    border-radius: 4px;
+    outline: none;
+    padding: .7em;
+    width: 100%;
+}
+
+.input:focus{
+    border-color: var(--bg-primary-color);
+}
+
+.search-input{
+    font-size:medium;
+    letter-spacing: 1.3px;
+    border: 2px solid rgba(204, 197, 197, 0.637);
+    border-radius: 2px;
+    border-right: none;
+    outline: none;
+    padding: .7em;
+    width: 100%;
+}
+
+.search-input:focus{
+    border-color: var(--bg-primary-color);
+}
+
+.grid{
+    display: grid;
+    column-gap: 1em;
+    grid-template-columns: 1fr 45fr 1fr 1fr;
+    align-items: center;
+}
+
+.text-center{
+    text-align: center;
+}
+
+footer{
+    background-color: #ddd;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: var(--footer-height);
+}
+
+.text-light{
+    color: #fff;
+}
+
+.m1{
+    margin: 1em;
+}
+
+.cart-section{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(58, 52, 52, 0.288);
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    width: 1px;
+    height: 2em
+}
+
+.cart-content{
+    position: fixed;
+    right: 0;
+    height: 100%;
+    background-color: white;
+    transition: all 10s;
+    overflow: auto;
+}
+
+.d-none{
+    display: none;
+}
+
+.fade-in-cart{
+    animation: fade-in-cart 300ms;
+    animation-fill-mode: forwards;
+}
+
+.product-filter{
+    margin-left: 1em;
+    width: 20%;
+    height: 100%;
+    background-color: black;
+}
+
+.products-content{
+    width: 75%;
+    height: 100%;
+}
+
+.filters{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 13%;
+    height: 25%;
+    background-color: #ddd;
+    line-height: 40px;
+}
+
+.main{
+    margin-bottom: var(--footer-height); 
+    position: relative; 
+    z-index: 1;
+    background-color: white;
+}
+
+.card{
+    width: 14em;
+    height: 18em;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #ddd;
+    border-width: 1px;
+}
+
+.card:hover{
+    background-color: #96909007;
+}
+
+.card img{
+    cursor: pointer;
+}
+
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-info{
+    position: absolute;
+    width: 70em;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 5em;
+    border-radius: 5px;
+}
+
+.full-content{
+    width: 100%;
+    height: 100%;
+}
+.line-height{
+    line-height: 30px;
+}
+
+.btn-primary{
+    background-color: var(--bg-primary-color);
+    color: white;
+    padding: 8px;
+    border-radius: 3px;
+    border-color: transparent;
+    cursor: pointer;
+}
+.btn-primary:hover{
+    background-color: #165fcc;
+}
+
+.btn-transparent{
+    background-color: transparent;
+    border: none;
+    padding: 10px 40px;
+    border-bottom: 2px solid var(--bg-primary-color);
+}
+
+.btn-form-login{
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 13px 60px;
+    border-bottom: 2px solid #fff;
+}
+
+.btn-form-login:hover{
+    border-bottom: 2px solid var(--bg-primary-color);
+}
+
+.btn-form-login-active{
+    font-weight: bold;
+    border-bottom: 2px solid var(--bg-primary-color);
+}
+
+.btn-cart{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.btn-cart:active{
+    background-color: #3177e02d;
+    border-radius: 10px;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.btn-search{
+    background-color: var(--bg-primary-color);
+    border: none;
+    border-radius: 2px;
+}
+
+.text-gray{
+    color: rgb(114, 109, 109);
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+}
+
+.modal-body{
+    width: 35rem;
+    height: 40rem;
+    box-shadow: 0px 0px 1px 1px rgba(136, 125, 125, 0.301);
+    background-color: white;
+    position: fixed;
+    top: -35rem;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 2px;
+}
+
+.show-modal{
+    animation: show-modal 450ms;
+    animation-fill-mode: forwards;
+}
+
+.show{
+    animation: show 250ms;
+    animation-fill-mode: forwards;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 300px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.btn-confirm{
+    background-color: #1259c4;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 8px 10px;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.form{
+    padding: 2em;
+    row-gap: 1em;
+    align-content: center;
+    justify-content: center;
+}
+
+.cart-count{
+    position: absolute;
+    background-color: #1259c4;
+    color: #fff;
+    border-radius: 1000px;
+    padding: 3px;
+    font-size: 12px;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: rgba(107, 173, 77, 0.705);
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+@keyframes fade-in-cart {
+    from{
+        width: 0%;
+    }
+    to{
+        width: 25%;
+    }
+}
+
+@keyframes show-modal {
+    from{
+        top: -35rem;
+    }
+    to{
+        top: 0;
+        bottom: 0;
+    }
+}
+
+@keyframes show {
+    from{
+        background-color: transparent;
+    }
+    to{
+        background-color: rgba(58, 52, 52, 0.288);
+    }
+}
+
