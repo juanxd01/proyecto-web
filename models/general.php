@@ -23,7 +23,7 @@ class Crud{
         return $data;
     }
 
-    public function insert($table, $array){
+    public function insert($table, $array, $show = false){
         $fields = "";
         $values = "";
         $i = 1;
@@ -38,7 +38,7 @@ class Crud{
         }
         $sql = "INSERT INTO $table ($fields) VALUES ($values)";
         $result = $this->conn->query($sql);
-        //echo "OK";
+        if($show) echo "OK";
     }
 
     public function update($table, $id, $array, $id_name){

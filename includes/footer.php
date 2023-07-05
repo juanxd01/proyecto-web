@@ -15,4 +15,7 @@
         <p></p>
     </div>
 </footer>
+<link rel="stylesheet" href="/src/css/toastr.min.css">
+<script src="/src/js/jquery.js"></script>
+<script src="/src/js/toastr.min.js"></script>
 <script src="/src/js/main.js?a=5"></script>

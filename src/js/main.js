@@ -40,8 +40,9 @@ forms.forEach(form => {
             console.log(text);
             if(text == "OK"){
                 if(form.hasAttribute('target-dismiss')) hideModal(document.querySelector('#' + form.getAttribute('target-dismiss')));
-                if(form.hasAttribute('message')) showToast(form.getAttribute('message'));
+                if(form.hasAttribute('message')) toastr.success(form.getAttribute('message'))
                 if(canReload) location.reload();
+                form.clear();
             } else {
                 errorCodes(text);
             }

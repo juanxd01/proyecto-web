@@ -58,7 +58,7 @@ function signup($conn){
             "phone" => $_POST["phone"],
             "password" => $_POST["password"],
             "level" => 3
-        ]);
+        ], true);
     }
 }
 
