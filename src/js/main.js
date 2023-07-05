@@ -54,6 +54,37 @@ forms.forEach(form => {
     });
 });
 
+function finishOrder(el){
+    generatePdf(1);
+    let data = new FormData(form);
+    fetch('/mail', {
+        method: 'POST',
+        body: data
+    })
+    .then(function(response) {
+        if(response.ok){
+            return response.text();
+        } 
+    })
+    .then(function(text) {
+        console.log(text);
+        if(text == "OK"){
+            generatePdf(1);
+            form.clear();
+        } else {
+            errorCodes(text);
+        }
+    })
+    .catch(function(err){
+        console.log(err);
+    });
+    return false;
+}
+
+function generatePdf(id_cart){
+    window.open('/pdf', '_blank')
+}
+
 btns_cart.forEach(btn => {
     btn.addEventListener('click', () => {
         if(document.querySelector(".quantity")) {

@@ -45,6 +45,9 @@ switch($page){
     case 'adminlogin':
         adminLogin($conn);
         break;
+    case 'pdf':
+        generatePdf($conn);
+        break;
     default:
         mainView($conn);
         break;

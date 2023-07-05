@@ -1,5 +1,6 @@
 <?php
 require_once 'models/general.php';
+require('src/fpdf182/fpdf.php');
 
 function mainView($conn){
     $cart = [];
@@ -156,11 +157,20 @@ function _mail($conn){
             "id_user" => $_SESSION["id_user"],
         ]);
         $user = new User($conn);
-        $user = $user->sendMail();
+        $user = $user->sendMail(); 
         $cart = new Cart($conn, $_SESSION["id_user"]);
+        $id_cart = $cart->getIdCart();
         $cart = $cart->finishOrder();
         echo "OK";
     }
+}
+
+function generatePdf(){
+    $pdf = new FPDF();
+    $pdf->AddPage();
+    $pdf->SetFont('Arial','B',16);
+    $pdf->Cell(40,10,'¡Hola, Mundo!');
+    $pdf->Output();
 }
 
 function aboutUs($conn){

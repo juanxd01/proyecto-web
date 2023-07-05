@@ -76,7 +76,7 @@
 <div id="modal-sale" class="modal">
     <div class="modal-body">
         <div class="signup-form">
-            <form target-dismiss="modal" message="Pedido registrado correctamente" reload ajax action="/mail" method="post" class="form display-flex display-flex-column full-content signup-form">
+            <form onsubmit="return finishOrder(this)" target-dismiss="modal" message="Pedido registrado correctamente" method="post" class="form display-flex display-flex-column full-content signup-form">
                 <label>Dirección</label>
                 <input name="address" class="input" type="text" placeholder="Ingresa tu direccion">
                 <label>Colonia</label>
