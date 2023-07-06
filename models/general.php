@@ -37,6 +37,7 @@ class Crud{
             $i++;
         }
         $sql = "INSERT INTO $table ($fields) VALUES ($values)";
+        echo $sql;
         $result = $this->conn->query($sql);
         if($show) echo "OK";
     }
