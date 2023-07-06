@@ -157,20 +157,58 @@ function _mail($conn){
             "id_user" => $_SESSION["id_user"],
         ]);
         $user = new User($conn);
-        $user = $user->sendMail(); 
+        //$user = $user->sendMail(); 
         $cart = new Cart($conn, $_SESSION["id_user"]);
         $id_cart = $cart->getIdCart();
+        $products = [];
+        $products = $cart->cartProducts();
         $cart = $cart->finishOrder();
-        echo "OK";
+        if($cart){
+            generatePdf($conn, $products, $id_cart);
+        } else echo "ERROR";
     }
 }
 
-function generatePdf(){
+function generatePdf($conn, $products = [], $id_cart = 0){
     $pdf = new FPDF();
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',16);
-    $pdf->Cell(40,10,'¡Hola, Mundo!');
-    $pdf->Output();
+    $pdf->Cell(0, 0, 'Productos Comprados');
+    $pdf->SetY($pdf->GetY() + 10);
+    $pdf->SetFont('Arial','B',14);
+    $pdf->Cell(0, 0, 'NOMBRE                        DESCRIPCION                     PRECIO                      CANTIDAD');
+    $pdf->SetFont('Arial', '', 10);
+    foreach($products[0] as $product){
+        $pdf->SetX(0);
+        $pdf->SetY($pdf->GetY() + 10);
+        $pdf->Cell(10, 3, substr($product["name"], 0, 24));
+        $pdf->SetX($pdf->GetX() + 45);
+        $pdf->Cell(10, 3, substr( $product["description"], 0, 24));
+        $pdf->SetX($pdf->GetX() + 55);
+        $pdf->Cell(10, 3, $product["price"]);
+        $pdf->SetX($pdf->GetX() + 37);
+        $pdf->Cell(10, 3, "1");
+        //$pdf->Cell(0, 0 , $product["name"] . "                      " . substr($product["description"], 0, 20) . "                      " . $product["price"] . "                      1" );
+    }
+
+    $pdf->SetX(0);
+    $pdf->SetY($pdf->GetY() + 10);
+    $pdf->SetFont('Arial','B',12);
+    $pdf->Cell(0,0, "TOTAL: $" . $total);
+    
+    //$file = $pdf->Output();
+    $file = $pdf->Output('S');
+    $file_name = $_SESSION["name"] . "cart_" . $id_cart . ".pdf";
+    $ch = curl_init('juan:123456@192.168.226.54/save.php');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, [
+        "file_name" => $file_name,
+        "file" => base64_encode($file),
+    ]);
+    $result = curl_exec($ch);
+    curl_close($ch); 
+    echo $file_name;
 }
 
 function aboutUs($conn){

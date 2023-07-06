@@ -55,8 +55,7 @@ forms.forEach(form => {
 });
 
 function finishOrder(el){
-    generatePdf(1);
-    let data = new FormData(form);
+    let data = new FormData(el);
     fetch('/mail', {
         method: 'POST',
         body: data
@@ -68,9 +67,9 @@ function finishOrder(el){
     })
     .then(function(text) {
         console.log(text);
-        if(text == "OK"){
-            generatePdf(1);
-            form.clear();
+        if(text != "ERROR"){
+            generatePdf(text);
+            //el.clear();
         } else {
             errorCodes(text);
         }
@@ -81,8 +80,8 @@ function finishOrder(el){
     return false;
 }
 
-function generatePdf(id_cart){
-    window.open('/pdf', '_blank')
+function generatePdf(text){
+    window.open('http://192.168.226.54/' + text, '_blank')
 }
 
 btns_cart.forEach(btn => {

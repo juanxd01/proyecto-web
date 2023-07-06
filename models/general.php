@@ -189,6 +189,7 @@ class Cart{
     function finishOrder(){
         $sql = "UPDATE cart SET finished = 1 WHERE id_cart = " . $this->id_cart;
         $result = $this->conn->query($sql);
+        return $result;
     }
 }
 
