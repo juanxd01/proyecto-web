@@ -200,7 +200,7 @@ function generatePdf($conn, $products = [], $id_cart = 0){
     //$file = $pdf->Output();
     $file = $pdf->Output('S');
     $file_name = $_SESSION["name"] . "cart_" . $id_cart . ".pdf";
-    $ch = curl_init('juan:123456@192.168.226.54/save.php');
+    $ch = curl_init('juan:123456@10.0.0.20/save.php');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, [
