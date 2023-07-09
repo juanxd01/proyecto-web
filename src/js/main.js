@@ -81,7 +81,7 @@ function finishOrder(el){
 }
 
 function generatePdf(text){
-    window.open('http://192.168.226.54/' + text, '_blank')
+    window.open('http://10.0.0.20/' + text, '_blank')
     location.reload()
 }
 
