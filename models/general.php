@@ -37,7 +37,7 @@ class Crud{
             $i++;
         }
         $sql = "INSERT INTO $table ($fields) VALUES ($values)";
-        echo $sql;
+        //echo $sql;
         $result = $this->conn->query($sql);
         if($show) echo "OK";
     }
@@ -190,6 +190,7 @@ class Cart{
     function finishOrder(){
         $sql = "UPDATE cart SET finished = 1 WHERE id_cart = " . $this->id_cart;
         $result = $this->conn->query($sql);
+	//echo $this->conn->error;
         return $result;
     }
 }

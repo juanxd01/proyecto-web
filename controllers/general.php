@@ -170,6 +170,7 @@ function _mail($conn){
 }
 
 function generatePdf($conn, $products = [], $id_cart = 0){
+    $total = $products["total"];
     $pdf = new FPDF();
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',16);

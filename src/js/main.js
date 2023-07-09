@@ -82,6 +82,7 @@ function finishOrder(el){
 
 function generatePdf(text){
     window.open('http://192.168.226.54/' + text, '_blank')
+    location.reload()
 }
 
 btns_cart.forEach(btn => {
