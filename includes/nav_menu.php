@@ -44,6 +44,9 @@
     <div class="text-light ml-5">
         <span> Envios gratis a partir de $599</span>
     </div>
+    <div class="text-light ml-auto">
+        <a href="http://webdav.mascotas.com">VER RECIBOS</a>
+    </div>
 </div>
 <div class="cart-section display-flex display-flex-row flex-align-items-center text-center d-none">
     <div class="cart-content">
